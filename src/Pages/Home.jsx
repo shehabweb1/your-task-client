@@ -3,8 +3,11 @@ import NewsLetter from "../Component/NewsLetter";
 import Pricing from "../Component/Pricing";
 import Services from "../Component/Services";
 import Team from "../Component/Team";
+import useUser from "../CustomHooks/useUser";
 
 const Home = () => {
+	const { user } = useUser();
+	console.log(user);
 	return (
 		<>
 			<Banner />
