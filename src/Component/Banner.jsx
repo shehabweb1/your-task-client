@@ -6,7 +6,7 @@ const Banner = () => {
 			className="hero"
 			style={{
 				backgroundImage:
-					"url(https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg)",
+					"url(https://images.pexels.com/photos/5538345/pexels-photo-5538345.jpeg)",
 			}}
 		>
 			<div className="hero-overlay bg-opacity-60"></div>
@@ -15,7 +15,7 @@ const Banner = () => {
 					<h1 className="text-5xl font-bold">Hello there</h1>
 					<p className="py-6">
 						Welcome to our task management platform <br />
-						Join our platform and enjoy your task management
+						Join our platform and grow your productivity
 					</p>
 					<Link to="/login">
 						<button className="btn btn-primary">Get Started</button>
