@@ -12,7 +12,7 @@ const App = () => {
 		location.pathname.includes("register");
 
 	if (loading) {
-		return <FadeLoader className="h-16 w-16 text-gray-900/50 mx-auto" />;
+		return <FadeLoader />;
 	}
 	return (
 		<div>
