@@ -1,9 +1,13 @@
-import { Typography } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import Header from "./Component/Header";
+import Footer from "./Component/Footer";
 
 const App = () => {
 	return (
 		<div>
-			<Typography variant="h1">Your Task</Typography>
+			<Header />
+			<Outlet />
+			<Footer />
 		</div>
 	);
 };
