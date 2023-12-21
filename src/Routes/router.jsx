@@ -7,6 +7,8 @@ import Main from "../Layout/Main";
 import Dashboard from "./../Pages/Dashboard";
 import Price from "./../Pages/Price";
 import Contact from "../Pages/Contact";
+import Login from './../Pages/Login';
+import SignUp from "../Pages/SignUp";
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
 			{
 				path: "contact",
 				element: <Contact />,
+			},
+			{
+				path: "login",
+				element: <Login />,
+			},
+			{
+				path: "register",
+				element: <SignUp />,
 			},
 		],
 	},

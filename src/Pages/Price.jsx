@@ -9,7 +9,7 @@ const Price = () => {
 		"Member resources",
 	];
 	return (
-		<div>
+		<div className="py-10">
 			<SectionHeader title="Pricing" subTitle="Our Pricing in the service" />
 			<div className="mx-auto px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl rounded-3xl lg:mx-0 lg:flex lg:max-w-none">
@@ -53,7 +53,7 @@ const Price = () => {
 										USD
 									</span>
 								</p>
-								<button className="mt-10 btn btn-primary">Get access</button>
+								<button className="mt-10 btn btn-neutral">Get access</button>
 								<p className="mt-6 text-xs leading-5 text-gray-600">
 									Invoices and receipts available for easy company reimbursement
 								</p>

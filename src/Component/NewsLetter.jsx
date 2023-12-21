@@ -49,7 +49,7 @@ const NewsLetter = () => {
 									/>
 									<button
 										name="subscribe"
-										className="join-item btn lg:btn-lg btn-primary"
+										className="join-item btn lg:btn-lg btn-neutral"
 									>
 										Subscribe
 									</button>

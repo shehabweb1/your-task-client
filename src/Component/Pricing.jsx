@@ -53,7 +53,7 @@ const Pricing = () => {
 										USD
 									</span>
 								</p>
-								<button className="mt-10 btn btn-primary">Get access</button>
+								<button className="mt-10 btn btn-neutral">Get access</button>
 								<p className="mt-6 text-xs leading-5 text-gray-600">
 									Invoices and receipts available for easy company reimbursement
 								</p>

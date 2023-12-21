@@ -55,7 +55,7 @@ const Header = () => {
 				<ul className="menu menu-lg menu-horizontal px-1">{navItem}</ul>
 			</div>
 			<div className="navbar-end">
-				<Link to="/login" className="btn lg:btn-lg">
+				<Link to="/login" className="btn btn-neutral">
 					Get Started
 				</Link>
 			</div>

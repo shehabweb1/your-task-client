@@ -40,25 +40,27 @@ const Contact = () => {
 							Our Contact Details
 						</h3>
 						<div className="ml-6">
-							<table className="flex flex-col gap-3 text-xl mx-auto w-1/2">
-								<tr>
-									<td>
-										<HiOfficeBuilding />
-									</td>
-									<td>Mohammadpur, Dhaka-1207</td>
-								</tr>
-								<tr>
-									<td>
-										<MdLocalPostOffice />
-									</td>
-									<td>contact@yourtask.com</td>
-								</tr>
-								<tr>
-									<td>
-										<HiPhone />
-									</td>
-									<td>+8801608451204</td>
-								</tr>
+							<table className="flex justify-center">
+								<tbody className="flex flex-col gap-3 text-xl">
+									<tr>
+										<td>
+											<HiOfficeBuilding />
+										</td>
+										<td>Mohammadpur, Dhaka-1207</td>
+									</tr>
+									<tr>
+										<td>
+											<MdLocalPostOffice />
+										</td>
+										<td>contact@yourtask.com</td>
+									</tr>
+									<tr>
+										<td>
+											<HiPhone />
+										</td>
+										<td>+8801608451204</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 					</div>
@@ -101,10 +103,7 @@ const Contact = () => {
 									name="message"
 								></textarea>
 							</fieldset>
-							<button
-								type="submit"
-								className="btn bg-blue-600 hover:bg-blue-700 text-white mt-3"
-							>
+							<button type="submit" className="btn btn-neutral mt-3">
 								<BsFillSendFill /> Send
 							</button>
 						</form>

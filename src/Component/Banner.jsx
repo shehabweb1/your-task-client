@@ -18,7 +18,7 @@ const Banner = () => {
 						Join our platform and grow your productivity
 					</p>
 					<Link to="/login">
-						<button className="btn btn-primary">Get Started</button>
+						<button className="btn btn-neutral">Let’s Explore</button>
 					</Link>
 				</div>
 			</div>
