@@ -10,6 +10,8 @@ import Contact from "../Pages/Contact";
 import Login from "./../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import Todo from "../Pages/Todo";
+import AddTask from "../Pages/AddTask";
 
 const router = createBrowserRouter([
 	{
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
 			{
 				path: "/dashboard",
 				element: <Dashboard />,
+			},
+			{
+				path: "addTask",
+				element: <AddTask></AddTask>,
+			},
+			{
+				path: "todo",
+				element: <Todo></Todo>,
 			},
 		],
 	},
