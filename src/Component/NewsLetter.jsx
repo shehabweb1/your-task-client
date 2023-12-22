@@ -1,14 +1,10 @@
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const NewsLetter = () => {
 	const handleSubscribe = (e) => {
 		e.preventDefault();
 		const form = e.target;
-
-		Swal.fire({
-			text: "Thank you for subscribing to our newsletter!",
-			icon: "success",
-		});
+		toast.success("Thank you for subscribing to our newsletter!");
 		form.email.value = "";
 	};
 	return (

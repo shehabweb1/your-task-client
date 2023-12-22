@@ -1,6 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import useUser from "../CustomHooks/useUser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
+	const { user, logOut } = useUser();
+	const navigate = useNavigate();
+
 	const navItem = (
 		<>
 			<li>
@@ -15,8 +20,22 @@ const Header = () => {
 			<li>
 				<NavLink to="/contact">Contact Us</NavLink>
 			</li>
+
+			{user && (
+				<li>
+					<NavLink to="/dashboard">Dashboard</NavLink>
+				</li>
+			)}
 		</>
 	);
+
+	const handleLogout = () => {
+		logOut().then(() => {
+			toast.success("Your account has been sign out!");
+			navigate("/");
+		});
+	};
+
 	return (
 		<div className="navbar bg-base-100 sticky top-0 left-0 z-10">
 			<div className="navbar-start">
@@ -55,10 +74,17 @@ const Header = () => {
 				<ul className="menu menu-lg menu-horizontal px-1">{navItem}</ul>
 			</div>
 			<div className="navbar-end">
-				<Link to="/login" className="btn btn-neutral">
-					Get Started
-				</Link>
+				{user ? (
+					<button className="btn btn-neutral" onClick={handleLogout}>
+						Sign Out
+					</button>
+				) : (
+					<Link to="/login" className="btn btn-neutral">
+						Get Started
+					</Link>
+				)}
 			</div>
+			<Toaster position="top-right" reverseOrder={true} />
 		</div>
 	);
 };

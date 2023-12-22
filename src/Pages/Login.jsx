@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Login = () => {
 	const { userLogin, loginWithGoogle } = useUser();
@@ -16,13 +16,7 @@ const Login = () => {
 	const onSubmit = (data) => {
 		userLogin(data.email, data.password).then((result) => {
 			if (result) {
-				Swal.fire({
-					title: "Successfully!",
-					text: "Your Account has been Login Successfully!",
-					icon: "success",
-					showConfirmButton: false,
-					timer: 1000,
-				});
+				toast.success("Your account has been login successful!");
 				reset();
 				navigate(from, { replace: true });
 			}
@@ -33,21 +27,13 @@ const Login = () => {
 		loginWithGoogle()
 			.then((result) => {
 				if (result) {
+					toast.success("Your account has been login successful!");
 					navigate(location?.state ? location.state : "/");
-					Swal.fire(
-						"Thank You!",
-						"Your account has been login successful!",
-						"success"
-					);
 				}
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
-				Swal.fire({
-					icon: "error",
-					title: "Oops...",
-					text: errorMessage,
-				});
+				toast.error(errorMessage);
 			});
 	};
 	return (

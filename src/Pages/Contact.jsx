@@ -1,17 +1,13 @@
 import { HiOfficeBuilding, HiPhone } from "react-icons/hi";
 import { MdLocalPostOffice } from "react-icons/md";
 import { BsFillSendFill } from "react-icons/bs";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Contact = () => {
 	const handleContactForm = (e) => {
 		e.preventDefault();
 		const form = e.target;
-		Swal.fire(
-			"Thank You!",
-			"Your message has been sent successfully!",
-			"success"
-		);
+		toast.success("Your message has been sent");
 		form.name.value = "";
 		form.email.value = "";
 		form.message.value = "";

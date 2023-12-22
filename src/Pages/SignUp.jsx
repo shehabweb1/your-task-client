@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { FaGoogle } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
 import useAxiosPublic from "./../CustomHooks/useAxiosPublic";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
+import toast from "react-hot-toast";
 
 const image_key = import.meta.env.VITE_IMAGE_KEY;
 const image_api = `https://api.imgbb.com/1/upload?key=${image_key}`;
@@ -39,17 +39,10 @@ const SignUp = () => {
 									name: data.name,
 									email: data.email,
 									image: res.data.data.display_url,
-									role: data.role.value,
 								};
 								// axiosPublic.post("/users", userData).then((res) => {
 								// 	if (res.data.insertedId) {
-								// 		Swal.fire({
-								// 			title: "Successfully",
-								// 			text: "Your Account has been created Successfully!",
-								// 			icon: "success",
-								// 			showConfirmButton: false,
-								// 			timer: 1000,
-								// 		});
+								// toast.success("Your Account has been created Successfully!")
 								// 		navigate("/");
 								// 	}
 								// });
@@ -57,24 +50,12 @@ const SignUp = () => {
 								navigate("/");
 							})
 							.catch((error) => {
-								Swal.fire({
-									icon: "error",
-									title: "Oops...",
-									text: error.message,
-									showConfirmButton: false,
-									// timer: 1000,
-								});
+								toast.error(error.message);
 							});
 					}
 				})
 				.catch((error) => {
-					Swal.fire({
-						icon: "error",
-						title: "Oops...",
-						text: error.message,
-						showConfirmButton: false,
-						// timer: 1000,
-					});
+					toast.error(error.message);
 				});
 		}
 	};
@@ -84,20 +65,11 @@ const SignUp = () => {
 			.then((result) => {
 				if (result) {
 					navigate("/");
-					Swal.fire(
-						"Thank You!",
-						"Your account has been login successful!",
-						"success"
-					);
+					toast.success("Your account has been login successful!");
 				}
 			})
 			.catch((error) => {
-				const errorMessage = error.message;
-				Swal.fire({
-					icon: "error",
-					title: "Oops...",
-					text: errorMessage,
-				});
+				toast.error(error.message);
 			});
 	};
 	return (
