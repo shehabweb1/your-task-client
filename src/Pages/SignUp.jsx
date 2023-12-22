@@ -40,14 +40,14 @@ const SignUp = () => {
 									email: data.email,
 									image: res.data.data.display_url,
 								};
-								// axiosPublic.post("/users", userData).then((res) => {
-								// 	if (res.data.insertedId) {
-								// toast.success("Your Account has been created Successfully!")
-								// 		navigate("/");
-								// 	}
-								// });
-								console.log(userData);
-								navigate("/");
+								axiosPublic.post("/api/users", userData).then((res) => {
+									if (res.data.insertedId) {
+										toast.success(
+											"Your Account has been created Successfully!"
+										);
+										navigate("/");
+									}
+								});
 							})
 							.catch((error) => {
 								toast.error(error.message);
@@ -63,9 +63,18 @@ const SignUp = () => {
 	const handleLoginWithGoogle = () => {
 		loginWithGoogle()
 			.then((result) => {
+				let googleUser = {
+					name: result.user.email,
+					email: result.user.displayName,
+					image: result.user.photoURL,
+				};
 				if (result) {
-					navigate("/");
-					toast.success("Your account has been login successful!");
+					axiosPublic.post("/api/users", googleUser).then((res) => {
+						if (res.data.insertedId) {
+							navigate("/");
+							toast.success("Your account has been login successful!");
+						}
+					});
 				}
 			})
 			.catch((error) => {
