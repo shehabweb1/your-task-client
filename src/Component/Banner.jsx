@@ -17,7 +17,7 @@ const Banner = () => {
 						Welcome to our task management platform <br />
 						Join our platform and grow your productivity
 					</p>
-					<Link to="/dashboard">
+					<Link to="/dashboard/task-board">
 						<button className="btn btn-neutral">Let’s Explore</button>
 					</Link>
 				</div>

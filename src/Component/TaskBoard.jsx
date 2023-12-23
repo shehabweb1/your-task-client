@@ -1,4 +1,3 @@
-// import { useEffect, useState } from 'react';
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Column";
 import toast from "react-hot-toast";
@@ -22,10 +21,10 @@ const TaskBoard = ({ tasks, refetch }) => {
 		}
 
 		axiosPublic
-			.patch(`/tasks/${draggableId}`, { category })
+			.patch(`/api/tasks/${draggableId}`, { category })
 			.then((res) => {
 				if (res.data.modifiedCount > 0) {
-					toast("Task Updated Successfully!", {
+					toast.success("Task Updated Successfully!", {
 						icon: "📢",
 						style: {
 							borderRadius: "8px",
@@ -37,7 +36,7 @@ const TaskBoard = ({ tasks, refetch }) => {
 				}
 			})
 			.catch((err) => {
-				toast(err.message, {
+				toast.error(err.message, {
 					icon: "❌",
 					style: {
 						borderRadius: "8px",
@@ -50,9 +49,9 @@ const TaskBoard = ({ tasks, refetch }) => {
 
 	return (
 		<DragDropContext onDragEnd={handleDragEnd}>
-			<h2 className="text-center text-3xl font-bold my-4">MY TASK BOARD</h2>
-			<p className="text-center italic mb-2 text-xs">
-				** Drag a task to the top of your desired category!
+			<h2 className="text-center text-3xl font-bold my-2">Task Board</h2>
+			<p className="text-center mb-2 text-sm">
+				Drag a task to the top of your desired category!
 			</p>
 			<div className="flex justify-between items-center md:flex-row flex-col">
 				<Column
